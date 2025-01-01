@@ -1,0 +1,21 @@
+# Ignore the .vscode directory
+.vscode/
+.vscode/settings.json
+.vscode/workspace.json
+.vscode/extensions.json
+.vscode/debug.log
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/snippets/
+.vscode/local-history/
+.vscode/profile/
+.vscode/state.vscdb
+.vscode/logs/
+.vscode/cache/
+.vscode/keybindings.json
+.vscode/locale.json
+.vscode/tasks.json
+.vscode/extensions/
+.vscode/workspaceStorage/
+.vscode/*.code-workspace
+.vscode/*.code-profile
