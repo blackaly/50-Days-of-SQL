@@ -15,19 +15,6 @@
 ## Solutions
 Detailed solutions for each question to help you verify your answers and learn best practices.
 
-## Resources
-A curated list of articles, tutorials, and books to supplement your learning.
-
-## Progress Tracker
-A checklist to track your progress and stay motivated throughout the 50 days.
-
----
-
-# Who Is This For?
-- Aspiring data analysts, data scientists, or backend developers.
-- Students or professionals preparing for SQL interviews.
-- Anyone looking to build a strong foundation in SQL and database management.
-
 ---
 
 # How to Use This Repository?
