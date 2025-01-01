@@ -1,10 +1,10 @@
 # Table of Contents: LeetCode Top SQL 50 Study Plan
 
-1. [Recyclable and Low Fat Products](#)
-2. [Find Customer Referee](#)
-3. [Big Countries](#)
-4. [Article Views I](#)
-5. [Invalid Tweets](#)
+1. [Recyclable and Low Fat Products](#problem-1)
+2. [Find Customer Referee](#problem-2)
+3. [Big Countries](#problem-3)
+4. [Article Views I](#problem-4)
+5. [Invalid Tweets](#problem-5)
 6. [Replace Employee ID With The Unique Identifier](#)
 7. [Product Sales Analysis I](#)
 8. [Customer Who Visited but Did Not Make Any Transactions](#)
