@@ -50,3 +50,39 @@
 48. [Employees Whose Manager Left the Company](#)
 49. [Customers Who Bought Products A and B but Not C](#)
 50. [All Valid Triplets That Can Represent a Country](#)
+
+
+## Problem 1
+```sql
+SELECT product_id 
+FROM Products
+WHERE low_fats  = 'Y' AND recyclable = 'Y'
+```
+
+## Problem 2
+```sql
+SELECT name
+FROM CUSTOMER
+WHERE referee_id IS NULL OR referee_id != 2  
+```
+
+## Problem 3
+```sql
+SELECT name, population, area
+FROM WORLD
+WHERE  area >= 3000000 OR population >= 25000000
+```
+
+## Problem 4
+```sql
+SELECT DISTINCT viewer_id  AS ID
+FROM VIEWS
+WHERE AUTHOR_ID = VIEWER_ID
+```
+
+## Problem 5
+```sql
+SELECT TWEET_ID
+FROM TWEETS
+WHERE LEN(CONTENT) > 15
+```
