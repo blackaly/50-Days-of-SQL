@@ -7,9 +7,9 @@
 5. [Invalid Tweets](#problem-5)
 6. [Replace Employee ID With The Unique Identifier](#problem-6)
 7. [Product Sales Analysis I](#problem-7)
-8. [Customer Who Visited but Did Not Make Any Transactions](#)
-9. [Rising Temperature](#)
-10. [Average Time of Process per Machine](#)
+8. [Customer Who Visited but Did Not Make Any Transactions](#problem-8)
+9. [Rising Temperature](#problem-9)
+10. [Average Time of Process per Machine](#problem-10)
 11. [Employee Bonus](#)
 12. [Students and Examinations](#)
 13. [Managers with at Least 5 Direct Reports](#)
@@ -101,4 +101,30 @@ RIGHT JOIN Employees ON Employees.ID=EmployeeUNI.ID
 SELECT PRODUCT_NAME, YEAR, PRICE
 FROM PRODUCT AS P
 INNER JOIN SALES S ON S.PRODUCT_ID=P.PRODUCT_ID
+```
+
+## Problem 8
+```sql
+SELECT CUSTOMER_ID, COUNT(CUSTOMER_ID) AS count_no_trans 
+FROM VISITS
+LEFT JOIN Transactions ON VISITS.VISIT_ID = Transactions.VISIT_ID
+WHERE Transactions.VISIT_ID IS NULL
+GROUP BY CUSTOMER_ID
+```
+
+## Problem 9
+```sql
+SELECT W1.ID
+FROM WEATHER AS W1
+FULL OUTER JOIN WEATHER AS W2 ON W1.ID = W2.ID
+WHERE (DATEDIFF(DAY, W1.recordDate, W2.recordDate)=1 AND W1.temperature > W2.temperature)
+```
+
+## Problem 10
+```sql
+SELECT A1.machine_id, round(AVG(A2.timestamp  - A1.timestamp ), 3) AS processing_time 
+FROM Activity  A1
+INNER JOIN Activity  A2 ON A1.machine_id =A2.machine_id  AND A1.process_id = A2.process_id
+WHERE A1.activity_type='start' AND A2.activity_type='end'
+GROUP BY A1.machine_id
 ```
