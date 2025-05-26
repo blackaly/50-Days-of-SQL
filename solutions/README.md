@@ -15,7 +15,7 @@
 13. [Managers with at Least 5 Direct Reports](#problem-13)
 14. [Confirmation Rate](#problem-14)
 15. [Not Boring Movies](#problem-15)
-16. [Average Selling Price](#)
+16. [Average Selling Price](#problem-16)
 17. [Project Employees I](#)
 18. [Percentage of Users Attended a Contest](#)
 19. [Queries Quality and Percentage](#)
@@ -173,4 +173,11 @@ select id, movie, description, rating
 from cinema
 where (id % 2)<>0 and description not like 'boring'
 order by rating desc
+```
+
+## Problem 16
+```sql
+SELECT p.product_id
+from prices p
+left join unitssold u on p.product_id=u.product_id AND u.purchase_date between start_date and end_date
 ```
