@@ -12,7 +12,7 @@
 10. [Average Time of Process per Machine](#problem-10)
 11. [Employee Bonus](#problem-11)
 12. [Students and Examinations](#problem-12)
-13. [Managers with at Least 5 Direct Reports](#)
+13. [Managers with at Least 5 Direct Reports](#problem-13)
 14. [Confirmation Rate](#)
 15. [Not Boring Movies](#)
 16. [Average Selling Price](#)
@@ -145,4 +145,16 @@ cross join Subjects u
 left join Examinations e on s.student_id = e.student_id and u.subject_name = e.subject_name
 group by s.student_id, student_name, u.subject_name
 order by s.student_id , subject_name 
+```
+
+## Problem 13
+
+```sql
+select name
+from employee
+where  id  in ((select e1.id 
+from employee e1
+inner join employee e2 on e1.id=e2.managerid
+group by e1.id
+having count(e1.id) >= 5))
 ```
