@@ -17,7 +17,7 @@
 15. [Not Boring Movies](#problem-15)
 16. [Average Selling Price](#problem-16)
 17. [Project Employees I](#problem-17)
-18. [Percentage of Users Attended a Contest](#)
+18. [Percentage of Users Attended a Contest](#problem-18)
 19. [Queries Quality and Percentage](#)
 20. [Monthly Transactions I](#)
 21. [Game Play Analysis I](#)
@@ -188,4 +188,12 @@ select p.project_id, Round(sum(e.experience_years) * 1.0 /count(p.project_id),2)
 from project as p
 inner join employee as e on p.employee_id = e.employee_id
 group by p.project_id
+```
+
+## Problem 18
+```sql
+select r.contest_id, round(count(r.user_id)*100.0 / (select count(distinct uu.user_id) from users uu), 2) as percentage  
+from register r
+group by r.contest_id
+order by percentage desc, r.contest_id 
 ```
