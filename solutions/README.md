@@ -14,7 +14,7 @@
 12. [Students and Examinations](#problem-12)
 13. [Managers with at Least 5 Direct Reports](#problem-13)
 14. [Confirmation Rate](#problem-14)
-15. [Not Boring Movies](#)
+15. [Not Boring Movies](#problem-15)
 16. [Average Selling Price](#)
 17. [Project Employees I](#)
 18. [Percentage of Users Attended a Contest](#)
@@ -165,4 +165,12 @@ select s.user_id, round(avg(case when action='confirmed' then 1.0 else 0.0 end),
 from signups s
 left join confirmations c on s.user_id = c.user_id
 group by s.user_id
+```
+
+## Problem 15
+```sql
+select id, movie, description, rating
+from cinema
+where (id % 2)<>0 and description not like 'boring'
+order by rating desc
 ```
