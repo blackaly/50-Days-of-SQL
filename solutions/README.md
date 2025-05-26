@@ -11,7 +11,7 @@
 9. [Rising Temperature](#problem-9)
 10. [Average Time of Process per Machine](#problem-10)
 11. [Employee Bonus](#problem-11)
-12. [Students and Examinations](#)
+12. [Students and Examinations](#problem-12)
 13. [Managers with at Least 5 Direct Reports](#)
 14. [Confirmation Rate](#)
 15. [Not Boring Movies](#)
@@ -135,4 +135,14 @@ select name, bonus
 from employee e
 left join bonus b on b.empid=e.empid
 where b.bonus < 1000 or b.bonus is null
+```
+
+## Problem 12
+```sql
+select s.student_id, student_name, u.subject_name, count(e.student_id) as attended_exams 
+from Students s
+cross join Subjects u
+left join Examinations e on s.student_id = e.student_id and u.subject_name = e.subject_name
+group by s.student_id, student_name, u.subject_name
+order by s.student_id , subject_name 
 ```
