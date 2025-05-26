@@ -10,7 +10,7 @@
 8. [Customer Who Visited but Did Not Make Any Transactions](#problem-8)
 9. [Rising Temperature](#problem-9)
 10. [Average Time of Process per Machine](#problem-10)
-11. [Employee Bonus](#)
+11. [Employee Bonus](#problem-11)
 12. [Students and Examinations](#)
 13. [Managers with at Least 5 Direct Reports](#)
 14. [Confirmation Rate](#)
@@ -127,4 +127,12 @@ FROM Activity  A1
 INNER JOIN Activity  A2 ON A1.machine_id =A2.machine_id  AND A1.process_id = A2.process_id
 WHERE A1.activity_type='start' AND A2.activity_type='end'
 GROUP BY A1.machine_id
+```
+
+## Problem 11
+```sql
+select name, bonus
+from employee e
+left join bonus b on b.empid=e.empid
+where b.bonus < 1000 or b.bonus is null
 ```
