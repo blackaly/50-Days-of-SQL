@@ -60,7 +60,7 @@ WHERE low_fats  = 'Y' AND recyclable = 'Y'
 ```
 
 ## Problem 2
-```sql
+```sql 
 SELECT name
 FROM CUSTOMER
 WHERE referee_id IS NULL OR referee_id != 2  
