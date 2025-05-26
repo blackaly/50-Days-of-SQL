@@ -16,7 +16,7 @@
 14. [Confirmation Rate](#problem-14)
 15. [Not Boring Movies](#problem-15)
 16. [Average Selling Price](#problem-16)
-17. [Project Employees I](#)
+17. [Project Employees I](#problem-17)
 18. [Percentage of Users Attended a Contest](#)
 19. [Queries Quality and Percentage](#)
 20. [Monthly Transactions I](#)
@@ -180,4 +180,12 @@ order by rating desc
 SELECT p.product_id
 from prices p
 left join unitssold u on p.product_id=u.product_id AND u.purchase_date between start_date and end_date
+```
+
+## Problem 17
+```sql
+select p.project_id, Round(sum(e.experience_years) * 1.0 /count(p.project_id),2) AS average_years
+from project as p
+inner join employee as e on p.employee_id = e.employee_id
+group by p.project_id
 ```
