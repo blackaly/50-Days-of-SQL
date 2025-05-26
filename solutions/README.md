@@ -13,7 +13,7 @@
 11. [Employee Bonus](#problem-11)
 12. [Students and Examinations](#problem-12)
 13. [Managers with at Least 5 Direct Reports](#problem-13)
-14. [Confirmation Rate](#)
+14. [Confirmation Rate](#problem-14)
 15. [Not Boring Movies](#)
 16. [Average Selling Price](#)
 17. [Project Employees I](#)
@@ -157,4 +157,12 @@ from employee e1
 inner join employee e2 on e1.id=e2.managerid
 group by e1.id
 having count(e1.id) >= 5))
+```
+
+## Problem 14
+```sql
+select s.user_id, round(avg(case when action='confirmed' then 1.0 else 0.0 end), 2) as confirmation_rate
+from signups s
+left join confirmations c on s.user_id = c.user_id
+group by s.user_id
 ```
